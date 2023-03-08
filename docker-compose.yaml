@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+
+  # Our application to debug
+  app:
+    container_name: py-xdebug
+    build:
+      context: ./
+      dockerfile: ./Docker
+    ports:
+      - '5678:5678'
+      - '80:80'
+    volumes:
+        - './app.py:/app/app.py'
+    
+    
